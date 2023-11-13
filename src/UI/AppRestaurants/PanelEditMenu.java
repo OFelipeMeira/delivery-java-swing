@@ -38,7 +38,7 @@ public class PanelEditMenu extends BasePanel {
         background.setVisible(true);
 
         // ---- Button to back to Login ---------
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
         backBtn.setBounds(100,70,55,55);
         backBtn.addActionListener(e -> screen.showRestaurantLogin() );
         backBtn.setBackground(Color.WHITE);
@@ -46,7 +46,7 @@ public class PanelEditMenu extends BasePanel {
         this.add(backBtn);
 
         // ---- Button to add a new item on the menu ---------
-        JButton addSandwich = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconAdd.png"))));
+        JButton addSandwich = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconAdd.png"))));
         addSandwich.setBounds(365,70,55,55);
         addSandwich.setBackground(Color.WHITE);
         addSandwich.setBorder(null);
@@ -87,7 +87,7 @@ public class PanelEditMenu extends BasePanel {
             sandwichPrice.setForeground(Color.decode("#666666"));
 
             // ---- Button to edit item  ---------
-            JButton addPedido = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconEdit.png"))));
+            JButton addPedido = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconEdit.png"))));
             addPedido.setBounds(250,0,46,46);
             addPedido.setBackground(Color.WHITE);
             addPedido.setBorder(null);

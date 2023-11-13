@@ -1,0 +1,57 @@
+- O aplicativo é configurado com os detalhes do restaurant: nome, CNPJ, e posição no mapa.
+Por simplicidade considere que a posição é um par de coordenadas (X, Y ).
+
+- O aplicativo permite o cadastro de usuários, que é feito informando nome, CPF, e endereço de entrega.
+Por simplicidade considere que o endereço é armazenado em forma de posição (X, Y ).
+
+- O aplicativo permite adicionar e remover itens ao cardápio do restaurant. Cada item contém nome, preço.
+
+- O aplicativo permite imprimir o cardápio completo do restaurant.
+
+- O aplicativo permite registrar pedidos dos usuários. Cada pedido pode incluir um ou mais itens do cardápio do restaurant
+
+- O valor total do pedido é a soma dos preços atuais de cada item.
+
+
+            CLASSES:
+;D
+- Entities.Aplicativo
+    Atributos:
+        -Restaurantes
+        -Usuarios
+        -Pedidos
+    Comportamentos
+        -cadastrarRestaurante
+        -cadastrarUsuario
+
+;D
+- Entities.Order
+    Atributos:
+        -Entities.Restaurant
+        -Entities.Account
+    Comportamentos
+        -fazerPedido
+        -imprimirPedido
+
+;D
+- Entities.Restaurant
+    Atributos:
+        -Nome
+        -Localização
+    Comportamentos
+        -imprimirCardapio
+        -adicionarLanche
+        -removerLanche
+
+;D
+- Entities.Account (objeto com o nome do usuario)
+    Atributos:
+        -Nome
+        -Endereço
+        -CPF
+
+;D
+- Entities.Sandwich
+    Atributos:
+        -Nome
+        -Preço

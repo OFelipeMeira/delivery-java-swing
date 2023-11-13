@@ -43,11 +43,28 @@ public class PanelRestaurantList extends BasePanel {
         this.add(userName);
 
         // ---- Setting a button to access cart screen -----
-        JButton cartBtn = new JButton("My cart");
-        cartBtn.setBounds(463,64,75,75);
+        JButton cartBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/Cart.png"))));
+        cartBtn.setBounds(463,70,75,75);
+        cartBtn.setBorder(null);
+        cartBtn.setBackground(Color.decode("#fcfcfc"));
         cartBtn.addActionListener( e -> {
             this.screen.showUserCart();
         });
+
+        JLabel cartNumber = new JLabel(Integer.toString(this.app.getCurrentOrder().size()), SwingConstants.CENTER);
+        cartNumber.setBounds(cartBtn.getX()+37, cartBtn.getY()+42, 28,28);
+        cartNumber.setOpaque(true);
+        cartNumber.setBackground(Color.decode("#66B8B2"));
+        cartNumber.setBorder(BorderFactory.createLineBorder(Color.decode("#18837E"), 2));
+        cartNumber.setFont(new Font("Arial", Font.BOLD, 18));
+        cartNumber.setForeground(Color.decode("#555555"));
+
+        cartBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cartNumber.revalidate();
+            }
+        });
+        this.add(cartNumber);
         this.add(cartBtn);
 
         // ---- Setting a button to Logout ---------
@@ -97,20 +114,23 @@ public class PanelRestaurantList extends BasePanel {
         for(int i = 0; i < restaurants.size(); i++){
             // Restaurant name
             JLabel restName = new JLabel(restaurants.get(i).getName());
-            restName.setBounds(0,0,200,50);
+            restName.setBounds(0,6,200,50);
             restName.setForeground(Color.decode("#666666"));
             restName.setFont(font);
 
             // Restaurant position
             JLabel restLoc = new JLabel(restaurants.get(i).getPosX() + " ; " + restaurants.get(i).getPosY(), SwingConstants.CENTER );
-            restLoc.setBounds(200,0,70,50);
+            restLoc.setBounds(200,6,70,50);
             restLoc.setForeground(Color.decode("#666666"));
             restLoc.setFont(font);
 
             int auxInt = i;
             // Button to show restaurant details
-            JButton restBtn = new JButton(" > ");
-            restBtn.setBounds(270,0,50,50);
+            JButton restBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconGo.png"))));
+//            restBtn.setBounds(267,0,53,53);
+            restBtn.setBounds(267,0,53,53);
+            restBtn.setBackground(Color.decode("#fcfcfc"));
+            restBtn.setBorder(null);
             restBtn.addActionListener(e -> {
                 this.screen.showUserRestaurantMenu(restaurants.get(auxInt));
             });

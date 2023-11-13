@@ -39,8 +39,9 @@ public class PanelRestaurantMenu extends BasePanel {
         background.setVisible(true);
 
         // ---- Button to back to Restaurant List ---------
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
-        backBtn.setBounds(135,75,40,40);
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
+        backBtn.setBounds(135-8,75,53,53);
+        backBtn.setBackground(Color.decode("#fcfcfc"));
         backBtn.addActionListener(e -> screen.showUserRestaurantList() );
         backBtn.setBorder(null);
         this.add(backBtn);
@@ -51,6 +52,25 @@ public class PanelRestaurantMenu extends BasePanel {
         restName.setFont(new Font("Arial", Font.BOLD, 30));
         restName.setForeground(Color.decode("#555555"));
         this.add(restName);
+
+        // ---- Setting a button to access cart screen -----
+        JButton cartBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/Cart.png"))));
+        cartBtn.setBounds(463,70,75,75);
+        cartBtn.setBorder(null);
+        cartBtn.setBackground(Color.decode("#fcfcfc"));
+        cartBtn.addActionListener( e -> {
+            this.screen.showUserCart();
+        });
+
+        JLabel cartNumber = new JLabel(Integer.toString(this.app.getCurrentOrder().size()), SwingConstants.CENTER);
+        cartNumber.setBounds(cartBtn.getX()+37, cartBtn.getY()+42, 28,28);
+        cartNumber.setOpaque(true);
+        cartNumber.setBackground(Color.decode("#66B8B2"));
+        cartNumber.setBorder(BorderFactory.createLineBorder(Color.decode("#18837E"), 2));
+        cartNumber.setFont(new Font("Arial", Font.BOLD, 18));
+        cartNumber.setForeground(Color.decode("#555555"));
+        this.add(cartNumber);
+        this.add(cartBtn);
 
         // ---- Sandwich list ---------
         ArrayList<Sandwich> menu = Database.getMenu(this.restaurant.getId());
@@ -86,13 +106,16 @@ public class PanelRestaurantMenu extends BasePanel {
                 sandwichPrice.setForeground(Color.decode("#666666"));
 
                 // Button to add this item to cart
-                JButton addPedido = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconLicking.png"))));
+                JButton addPedido = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconLicking.png"))));
                 addPedido.setBounds(260, 0, 55, 55);
                 addPedido.setBackground(Color.decode("#fcfcfc"));
                 addPedido.setBorder(null);
                 int finalI = i;
                 addPedido.addActionListener(e -> {
+                    // Add item into cart
                     this.app.orderAddSandwich(menu.get(finalI));
+                    // Reaload Page
+                    this.screen.showUserRestaurantMenu(this.restaurant);
                 });
 
                 // container for each item

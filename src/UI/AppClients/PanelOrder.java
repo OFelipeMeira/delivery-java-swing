@@ -34,8 +34,9 @@ public class PanelOrder extends JPanel{
         background.setVisible(true);
 
         // Back button
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
-        backBtn.setBounds(135,75,40,40);
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
+        backBtn.setBounds(135-8,75,53,53);
+        backBtn.setBackground(Color.decode("#fcfcfc"));
         backBtn.addActionListener(e -> screen.showUserRestaurantList() );
         backBtn.setBorder(null);
         this.add(backBtn);

@@ -36,7 +36,7 @@ public class PanelEditSandwich extends BasePanel {
         background.setVisible(true);
 
         // ---- Button to back to Edit Panel ---------
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
         backBtn.setBounds(110,190,55,55);
         backBtn.addActionListener(e -> this.screen.showEditMenu(this.app.getLoggedRestaurant()) );
         backBtn.setBackground(Color.WHITE);

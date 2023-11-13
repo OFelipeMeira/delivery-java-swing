@@ -33,7 +33,7 @@ public class PanelRestaurantLogin extends BasePanel {
         background.setVisible(true);
 
         // ---- Setting a Button to go back to main menu screen -----
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
         backBtn.setBounds(10,10,55,55);
         backBtn.addActionListener(e -> this.screen.showMainMenu() );
         backBtn.setBackground(Color.WHITE);

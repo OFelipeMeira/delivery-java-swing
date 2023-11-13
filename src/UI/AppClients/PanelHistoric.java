@@ -38,8 +38,9 @@ public class PanelHistoric extends BasePanel {
         background.setVisible(true);
 
         // Back button
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
-        backBtn.setBounds(135,75,40,40);
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
+        backBtn.setBounds(135-8,75,53,53);
+        backBtn.setBackground(Color.decode("#fcfcfc"));
         backBtn.addActionListener(e -> screen.showUserRestaurantList() );
         backBtn.setBorder(null);
         this.add(backBtn);
@@ -84,20 +85,22 @@ public class PanelHistoric extends BasePanel {
                 // Date from the order
                 String date = String.valueOf(order.getDate());
                 JLabel orderDate = new JLabel(date);
-                orderDate.setBounds(10, 15, 200, 75);
+                orderDate.setBounds(10, 20, 200, 75);
                 orderDate.setForeground(Color.decode("#666666"));
                 orderDate.setFont(font);
 
                 // Total from the order
                 JLabel orderTotal = new JLabel("$"+String.valueOf(order.getTotal()));
-                orderTotal.setBounds(170, 15, 200, 75);
+                orderTotal.setBounds(170, 20, 200, 75);
                 orderTotal.setForeground(Color.decode("#666666"));
                 orderTotal.setFont(font);
 
                 // Button to see more about this order
-                JButton details = new JButton("Details");
-                details.setBounds(250, 10, 75, 65);
+                JButton details = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconDetails.png"))));
+                details.setBounds(240, 10, 75, 65);
                 details.setForeground(Color.decode("#666666"));
+                details.setBackground(Color.decode("#fcfcfc"));
+                details.setBorder(null);
                 details.setFont(new Font("Arial",Font.BOLD,10));
                 details.addActionListener(e -> screen.showOrderSandwichesList(order) );
 

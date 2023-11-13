@@ -33,8 +33,9 @@ public class PanelCart extends BasePanel {
         background.setVisible(true);
 
         // ---- Button to back to Login ---------
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
-        backBtn.setBounds(135,75,40,40);
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
+        backBtn.setBounds(135-8,75,53,53);
+        backBtn.setBackground(Color.decode("#fcfcfc"));
         backBtn.addActionListener(e -> screen.showUserRestaurantList() );
         backBtn.setBorder(null);
         this.add(backBtn);
@@ -105,8 +106,9 @@ public class PanelCart extends BasePanel {
                 sandwichPrice.setFont(font);
 
                 // Remove item button
-                JButton removeItem = new JButton("remove");
+                JButton removeItem = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconRemove.png"))));
                 removeItem.setBounds(270, 13, 50, 50);
+                removeItem.setBackground(Color.decode("#fcfcfc"));
                 removeItem.setBorder(null);
                 int auxInt = i;
                 removeItem.addActionListener(e -> {

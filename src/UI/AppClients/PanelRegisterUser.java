@@ -35,10 +35,10 @@ public class PanelRegisterUser extends BasePanel {
         background.setVisible(true);
 
         // ---- Setting a button to go back to Login Page -----
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
         backBtn.setBounds(10,10,55,55);
         backBtn.addActionListener(e -> screen.showUserLogin() );
-        backBtn.setBackground(Color.RED);
+        backBtn.setBackground(Color.decode("#ffffff"));
         backBtn.setBorder(null);
         this.add(backBtn);
 

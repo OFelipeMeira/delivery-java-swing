@@ -35,7 +35,7 @@ public class PanelRestaurantRegister extends BasePanel {
         background.setVisible(true);
 
         // ---- Button to back to Edit Panel ---------
-        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/IconBack.png"))));
+        JButton backBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconBack.png"))));
         backBtn.setBounds(10,10,55,55);
         backBtn.addActionListener(e -> this.screen.showRestaurantLogin() );
         backBtn.setBackground(Color.WHITE);

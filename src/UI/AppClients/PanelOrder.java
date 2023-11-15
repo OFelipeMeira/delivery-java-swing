@@ -55,8 +55,8 @@ public class PanelOrder extends JPanel{
         // White Panel of scrollable frame
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-        panel.setBackground(Color.WHITE);
         panel.setBorder(null);
+        panel.setBackground(Color.decode("#fcfcfc"));
 
         Font font = new Font("Arial",Font.BOLD,15);
 
@@ -80,7 +80,6 @@ public class PanelOrder extends JPanel{
             item.setMinimumSize(new Dimension(350,75));
             item.setMaximumSize(new Dimension(350,75));
             item.setLayout(null);
-            item.setBackground(Color.WHITE);
 
             // adding all into 'containter'
             item.add(orderDate);

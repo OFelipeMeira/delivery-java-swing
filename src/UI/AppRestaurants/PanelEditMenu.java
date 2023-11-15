@@ -68,7 +68,7 @@ public class PanelEditMenu extends BasePanel {
         // Panel for scroll
         JPanel panel = new JPanel();
         panel.setLayout( new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-        panel.setBackground(Color.WHITE);
+        panel.setBackground(Color.decode("#fcfcfc"));
 
         Font font = new Font("Arial", Font.BOLD,17);
 
@@ -87,12 +87,12 @@ public class PanelEditMenu extends BasePanel {
             sandwichPrice.setForeground(Color.decode("#666666"));
 
             // ---- Button to edit item  ---------
-            JButton addPedido = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconEdit.png"))));
-            addPedido.setBounds(250,0,46,46);
-            addPedido.setBackground(Color.WHITE);
-            addPedido.setBorder(null);
+            JButton editBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/IconEdit.png"))));
+            editBtn.setBounds(250,0,46,46);
+            editBtn.setBackground(Color.decode("#fcfcfc"));
+            editBtn.setBorder(null);
             int finalI = i;
-            addPedido.addActionListener(e -> {
+            editBtn.addActionListener(e -> {
                 this.screen.showEditSandwich(menu.get(finalI));
             });
 
@@ -105,7 +105,7 @@ public class PanelEditMenu extends BasePanel {
 
             item.add(sandwichName);
             item.add(sandwichPrice);
-            item.add(addPedido);
+            item.add(editBtn);
 
             panel.add(item);
             //padding:
@@ -137,6 +137,71 @@ public class PanelEditMenu extends BasePanel {
             this.screen.showRestaurantLogin();
         } );
         this.add(logoutBtn);
+
+        // Logout Button
+        JButton printBtn = new JButton(new ImageIcon(Objects.requireNonNull(getClass().getResource("../Images/Buttons/Logout.png"))));
+        printBtn.setBounds(315,615,150,50);
+        printBtn.setBorder(null);
+        printBtn.setFont(new Font("Arial", Font.BOLD,15));
+        printBtn.setForeground(Color.decode("#555555"));
+        printBtn.setBackground(Color.decode("#fcfcfc"));
+        printBtn.addActionListener(e -> {
+
+            for (int i = 0; i <=60; i++) {
+                if (i==0){
+                    System.out.print("┌");
+                }else if(i == 60) {
+                    System.out.print("┐");
+                }else{
+                    System.out.print("─");
+                }
+            }
+            System.out.println();
+
+            for (int i = 0; i <= 60; i++) {
+                if (i==0){
+                    System.out.print("│ ");
+                }
+                else if (i==58){
+                    System.out.print("│");
+                }
+                if (i< restaurant.getName().length()){
+                    System.out.print("\033[96;1m"+restaurant.getName().charAt(i)+"\033[0m");
+                }else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+            for (Sandwich item : menu){
+
+                for (int i = 0; i < 49; i++) {
+                    if (i==0){
+                        System.out.print("│ ");
+                    }
+                    if (i< item.getName().length()){
+                        System.out.print("\033[36;1m"+item.getName().charAt(i)+"\033[0m");
+                    }else {
+                        System.out.print(" ");
+                    }
+                }
+
+                double price = Math.round(item.getPrice() * 100.0) / 100.0;
+                System.out.println("│ \033[92m $" + price + "\033[0m │");
+            }
+
+            for (int i = 0; i <=60; i++) {
+                if (i==0){
+                    System.out.print("└");
+                }else if(i == 60) {
+                    System.out.println("┘");
+                }else{
+                    System.out.print("─");
+                }
+            }
+
+        } );
+        this.add(printBtn);
 
         this.add(background);
     }

@@ -17,14 +17,6 @@ public class Order {
         this.restaurants = new ArrayList<>();
     }
 
-    /** Method to show all menu from a restaurant*/
-    public void imprimirPedido(){
-        for (Sandwich item : this.items){
-            System.out.println(item.getName());
-            System.out.println(item.getPrice());
-        }
-    }
-
     public Timestamp getDate() {
         return date;
     }

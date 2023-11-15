@@ -90,7 +90,8 @@ public class PanelHistoric extends BasePanel {
                 orderDate.setFont(font);
 
                 // Total from the order
-                JLabel orderTotal = new JLabel("$"+String.valueOf(order.getTotal()));
+                Double total = Math.round(order.getTotal() * 100.0) / 100.0;
+                JLabel orderTotal = new JLabel("$"+String.valueOf(total) );
                 orderTotal.setBounds(170, 20, 200, 75);
                 orderTotal.setForeground(Color.decode("#666666"));
                 orderTotal.setFont(font);

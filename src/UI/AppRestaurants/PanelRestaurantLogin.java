@@ -77,7 +77,10 @@ public class PanelRestaurantLogin extends BasePanel {
                 this.app.setLoggedRestaurant(restaurant);
                 screen.showEditMenu(restaurant);
             }else{
-                System.err.println("Não logou");
+                JOptionPane.showMessageDialog(this,
+                        "No Restaurant Founded",
+                        "Error on Login",
+                        JOptionPane.ERROR_MESSAGE);
             }
 
         });

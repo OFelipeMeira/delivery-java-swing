@@ -34,14 +34,6 @@ public class Aplicativo {
         return this.currentOrder;
     }
 
-    public void orderPrintAll(){
-        System.out.println("===== ORDER ===============");
-        for(Sandwich sandwich : this.currentOrder){
-            System.out.println(sandwich.getName());
-        }
-        System.out.println("===========================");
-    }
-
     public Restaurant getLoggedRestaurant() {
         return loggedRestaurant;
     }

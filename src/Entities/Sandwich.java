@@ -5,7 +5,6 @@ public class Sandwich {
     private String name;
     private double price;
 
-
     public Sandwich(String name, double price){
         this.name = name;
         this.price = price;

@@ -69,13 +69,10 @@ public class PanelLogin extends BasePanel {
         login.setBorder(null);
         login.addActionListener( e ->{
             Account account = Database.getAccount(user.getText(),password.getText());
-            System.out.println(user.getText());
-            System.out.println(password.getText());
             if (account != null){
                 this.app.setLoggedUser(account);
                 screen.showUserRestaurantList();
             }else{
-                System.err.println("Não logou");
                 JOptionPane.showMessageDialog(this,
                         "No Account Founded",
                         "Error on Login",

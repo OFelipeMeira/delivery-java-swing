@@ -122,7 +122,7 @@ public class PanelHistoric extends BasePanel {
         scrollPane.setBorder(null);
 
         JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
-        verticalScrollBar.setUnitIncrement(8);
+        verticalScrollBar.setUnitIncrement(12);
         this.add(scrollPane);
 
         this.add(background);

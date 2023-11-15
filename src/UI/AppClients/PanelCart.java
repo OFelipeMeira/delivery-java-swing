@@ -142,6 +142,9 @@ public class PanelCart extends BasePanel {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBounds(135, 135, 320, 450);
         scrollPane.setBorder(null);
+
+        JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
+        verticalScrollBar.setUnitIncrement(12);
         this.add(scrollPane);
 
         this.add(background);

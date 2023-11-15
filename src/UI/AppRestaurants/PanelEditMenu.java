@@ -119,8 +119,7 @@ public class PanelEditMenu extends BasePanel {
         scrollPane.setBounds(110, 175, 300, 425);
 
         JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
-        verticalScrollBar.setUnitIncrement(8); // scroll speed
-
+        verticalScrollBar.setUnitIncrement(12);
         this.add(scrollPane);
 
         // Logout Button

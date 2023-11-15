@@ -145,8 +145,7 @@ public class PanelRestaurantMenu extends BasePanel {
         scrollPane.setBounds(135,130,320,545);
 
         JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
-        verticalScrollBar.setUnitIncrement(8); // Scroll speed
-
+        verticalScrollBar.setUnitIncrement(12);
         this.add(scrollPane);
 
         this.add(background);
